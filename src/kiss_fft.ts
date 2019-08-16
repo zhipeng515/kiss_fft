@@ -420,7 +420,6 @@ export module kiss_fft {
         }
 
         Fout = Fout_in.subarray();
-        // console.log("Fout beg %d", Fout_end_index);
 
         // recombine the p smaller DFTs 
         switch (p) {
@@ -485,7 +484,6 @@ export module kiss_fft {
                     phase *= -1;
                 }
                 kf_cexp(st.twiddles.value(i), phase);
-                // console.log(i + " r = " + st.twiddles.value(i).r + " i = " + st.twiddles.value(i).i + " p = " + phase);
             }
 
             kf_factor(nfft, st.factors);
