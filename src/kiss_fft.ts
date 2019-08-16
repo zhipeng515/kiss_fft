@@ -1,6 +1,4 @@
 import { ObjectArray } from "./ObjectArray";
-import { String } from 'typescript-string-operations';
-//import NP from 'number-precision'
 
 export module kiss_fft {
     type kiss_fft_scalar = number;
@@ -13,7 +11,7 @@ export module kiss_fft {
         r: kiss_fft_scalar = 0;
         i: kiss_fft_scalar = 0;
         toString(): string {
-            return String.Format('kiss_fft_cpx r = {0} i = {1}', this.r, this.i);
+            return 'kiss_fft_cpx r = ' + this.r + ' i = ' + this.i;
         }
     }
 
@@ -23,8 +21,8 @@ export module kiss_fft {
         factors: ObjectArray<Number> = new ObjectArray<Number>(2 * MAXFACTORS, Number);
         twiddles: ObjectArray<kiss_fft_cpx> = new ObjectArray<kiss_fft_cpx>(1, kiss_fft_cpx);
         toString(): string {
-            return String.Format('kiss_fft_cpx r = {0} i = {1}\n  factors: {2}\n  twiddles: {3}', 
-            this.nfft, this.inverse, this.factors, this.twiddles);
+            return 'kiss_fft_state nfft = ' + this.nfft + ' inverse = ' + 
+                this.inverse + '\n  factors: + ' + this.factors + '\n  twiddles: ' + this.twiddles; 
         }
     }
     export type kiss_fft_cfg = kiss_fft_state;
